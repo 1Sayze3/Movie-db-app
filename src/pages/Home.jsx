@@ -20,10 +20,8 @@ export default function Home() {
     let fetchFn;
 
     if (query) {
-      // Always use search if there's a query
       fetchFn = () => searchMovies(query, page);
     } else if (selectedGenre) {
-      // Use genre fetch if there's no query
       fetchFn = () => fetchMoviesByGenre(selectedGenre, page);
     } else {
       fetchFn = () => fetchPopularMovies(page);
@@ -32,8 +30,6 @@ export default function Home() {
     fetchFn()
       .then(res => {
         let results = res.data.results;
-
-        // If both query and genre are set, manually filter
         if (query && selectedGenre) {
           results = results.filter(m =>
             m.genre_ids.includes(Number(selectedGenre))
