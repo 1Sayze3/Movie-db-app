@@ -7,7 +7,7 @@ export const fetchPopularMovies = (page = 1) =>
   axios.get(`${BASE_URL}/movie/popular?api_key=${API_KEY}&page=${page}`);
 
 export const fetchMovieDetails = (id) =>
-  axios.get(`${BASE_URL}/movie/${id}?api_key=${API_KEY}`);
+  axios.get(`${BASE_URL}/movie/${id}?api_key=${API_KEY}&append_to_response=videos,credits`);
 
 export const searchMovies = (query, page = 1) =>
   axios.get(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}&page=${page}`);
