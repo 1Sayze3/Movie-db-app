@@ -8,16 +8,14 @@ export default function Navbar() {
   return (
     <nav className="bg-gray-900 text-white sticky top-0 z-50 shadow">
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Logo */}
         <Link to="/" className="text-2xl font-bold">MovieDB</Link>
 
-        {/* Desktop Links */}
+        
         <div className="hidden md:flex space-x-6">
           <Link to="/" className="hover:text-gray-300">Home</Link>
           <Link to="/about" className="hover:text-gray-300">About Us</Link>
         </div>
-
-        {/* Hamburger Icon */}
+        
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -28,7 +26,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Dropdown Menu */}
       {isOpen && (
         <div className="md:hidden px-4 pb-4">
           <div className="bg-gray-800 rounded-lg shadow-md p-4">
