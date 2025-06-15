@@ -37,7 +37,13 @@ export default function MovieDetail() {
           <p><strong>Release Date:</strong> {movie.release_date}</p>
           <p><strong>Runtime:</strong> {movie.runtime} mins</p>
           <p><strong>Genres:</strong> {movie.genres.map(g => g.name).join(', ')}</p>
-          <p><strong>Budget:</strong> ${movie.budget.toLocaleString()}</p>
+          <p>
+            <strong>Budget:</strong>{' '}
+            {movie.budget > 0
+              ? `$${movie.budget.toLocaleString()}`
+              : 'Not Available'}
+          </p>
+
         </div>
 
         {topCast?.length > 0 && (
