@@ -22,10 +22,13 @@ export default function MovieDetail() {
     <div className="p-4 max-w-4xl mx-auto text-white">
       <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
         <img
-          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+          src={movie.poster_path 
+            ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` 
+            : 'https://placehold.co/500x750?text=No+Image+Available'}
           alt={movie.title}
           className="w-full max-w-md rounded mx-auto"
         />
+
         <h1 className="text-3xl font-bold mt-4 text-center">{movie.title}</h1>
         <p className="text-gray-400 text-center mb-4">⭐ {movie.vote_average}</p>
         <p className="mb-6 text-justify">{movie.overview}</p>

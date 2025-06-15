@@ -76,10 +76,15 @@ export default function Home() {
             className="bg-gray-800 text-white rounded-lg overflow-hidden shadow-md hover:scale-105 transition transform"
           >
             <img
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              src={
+                movie.poster_path
+                  ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                  : 'https://placehold.co/500x750?text=No+Image+Available'
+              }
               alt={movie.title}
               className="w-full h-72 object-cover"
             />
+
             <div className="p-4">
               <h3 className="text-lg font-bold">{movie.title}</h3>
               <p className="text-sm">⭐ {movie.vote_average}</p>
